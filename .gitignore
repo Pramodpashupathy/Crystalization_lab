@@ -1,0 +1,20 @@
+# Build artifacts
+build/
+_deps/
+bin/
+
+# Shared libraries
+*.so
+*.so.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data & logs
+Data_files/
+*.csv
+
+# IDE configs
+.vscode/
+.idea/
