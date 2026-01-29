@@ -21,7 +21,7 @@ using namespace ur_rtde;
 // Robot home pose
 // ------------------------------------------------------------
 std::vector<double> tcp_home_position =
-{ -0.222, -0.479, 0.481, 0, 3.14, 0.0};
+{ -0.222, -0.479, 0.581, 0, 3.14, 0.0};
 
 
 double computeReprojectionError(
@@ -207,8 +207,8 @@ int main()
         // --------------------------------------------------------
         // IBVS parameters
         // --------------------------------------------------------
-        double k = 0.2;
-        double tol = 0.002;      // 2 mm
+        double k = 0.1;
+        double tol = 0.001;      // 2 mm
         double maxStep = 0.01;   // 1 cm
 
         namedWindow("Board Centering", WINDOW_AUTOSIZE);
@@ -257,6 +257,7 @@ int numMarkers;
 
                 double dx = boardCenterCam.x;
                 double dy = boardCenterCam.y;
+                std:: cout << "The board centre is:" << boardCenterCam.x*1000<< boardCenterCam.y*1000<< endl;
                 double err = sqrt(dx*dx + dy*dy);
 
                 putText(frame,
